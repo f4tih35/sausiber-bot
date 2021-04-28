@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix='rakun/')
 async def feed(ctx):
     await get_ctftime_feed(ctx)
     await get_reddit_feed(ctx)
-    time.sleep(15*60)
+    time.sleep(60)
     await feed(ctx)
 
 
@@ -46,8 +46,8 @@ async def get_reddit_feed(ctx):
     async def get_trsec():
         global last_reddit_trsec_entry
 
-        NewsFeed = feedparser.parse("https://www.reddit.com/r/trsec/new/.rss")
-
+        # NewsFeed = feedparser.parse("https://www.reddit.com/r/trsec/new/.rss")
+        NewsFeed = feedparser.parse("https://www.reddit.com/new/.rss") # testing
         if last_reddit_trsec_entry == NewsFeed.entries[0]:
             print("x")
         else:
