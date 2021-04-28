@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix='rakun/')
 async def feed(ctx):
     await get_ctftime_feed(ctx)
     await get_reddit_feed(ctx)
-    time.sleep(2)
+    time.sleep(60)
     await feed(ctx)
 
 
