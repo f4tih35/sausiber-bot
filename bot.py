@@ -1,7 +1,5 @@
 import discord
 from discord.ext import commands
-from datetime import datetime
-import feedparser
 import time
 import os
 from cogs import get_ctftime_feed, get_reddit_feed
@@ -25,8 +23,9 @@ async def ping(ctx):
 async def feed(ctx):
     await get_ctftime_feed.get_ctftime_feed(ctx)
     await get_reddit_feed.get_reddit_feed(ctx)
-    await feed(ctx)
     time.sleep(60)
+    await feed(ctx)
+
 
 
 if __name__ == "__main__":
